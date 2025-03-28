@@ -141,7 +141,7 @@ header {
     background-color: var(--CG);
     padding: 0;
     display: block;
-
+    width: 100%;
 }
 
 .carousel {

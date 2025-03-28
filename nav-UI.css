@@ -135,7 +135,7 @@ section div {
 
 footer {
     width: auto;
-    height: 80px;
+    height: fit-content;
     background-color: var(--br);
     text-align: center;
 }
