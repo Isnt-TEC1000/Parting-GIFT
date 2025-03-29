@@ -151,9 +151,12 @@ footer a:visited, footer a:link {
     color: var(--selected);
 }
 
-footer h3 {
+.fin {
     font-family: "Poppins";
-    color: var(--Nav);
+    color: var(--Shader);
+    text-align: center;
+    height: fit-content;
+    background-color: var(--Ct);
 }
 
 footer a:hover {
