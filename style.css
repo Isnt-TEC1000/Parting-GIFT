@@ -93,8 +93,8 @@ header {
 }
 
 .secondPg {
-    margin: 20px auto;
-    max-width: 900px; 
+    margin: 20px 40px;
+    /* max-width: 900px;  */
     word-break: break-word;
 } 
 
