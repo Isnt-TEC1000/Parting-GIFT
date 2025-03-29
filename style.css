@@ -289,5 +289,6 @@ header {
 
     .carousel-content {
         width: 40vw;
+        margin: auto;
     }
 }
