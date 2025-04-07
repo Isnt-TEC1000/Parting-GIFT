@@ -29,6 +29,8 @@ heroImg.forEach(image => {
     }
 });
 
+
+/* Ignore this for now */
 const stateCheck = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log("success");
@@ -48,5 +50,39 @@ window.addEventListener('load', () => {
     scrollElement.scrollLeft =  (scrollElement.scrollWidth - scrollElement.clientWidth ) / 2;
     console.log("huh")
   });
+
+const Message = document.querySelector(".hero h1");
+
+Message.addEventListener("copy", () => {
+    const MessageH = document.createElement("dialog");
+    MessageH.classList.add("modalH");
+
+    const container = document.createElement("section");
+    container.classList.add("modalSection")
+
+    const header = document.createElement("h1");
+    header.innerText = "My Parting Gift";
+    header.classList.add("modalH1");
+
+    const content = document.createElement("p");
+    content.innerText = "This website is my final, everlasting gift to this organization I have failed, to it's future, to the plan painted on the wall. But in His eyes, I can tell He knows that I am only really doing it for Him. The greatest, most universal acts are always born from the personal."
+    content.classList.add("modalP");
+
+
+    container.append(header, content);
+    MessageH.append(container);
+
+    body.append(MessageH);
+    MessageH.showModal();
+
+    console.log("rassecole");
+
+    window.onclick = function(event) {
+        if (event.target == MessageH) {
+            MessageH.close();
+            MessageH.remove();
+        }
+    }
+});
 
 

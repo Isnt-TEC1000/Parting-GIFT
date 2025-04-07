@@ -184,3 +184,40 @@ footer a:hover {
 .modal::backdrop {
     background-color: var(--mBG);
 }
+
+.modalH {
+    position: fixed;
+    margin: auto;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    border-radius: 5px;
+    outline: none;
+    border: var(--Cn) 3px solid;
+    
+}
+
+.modalH::backdrop {
+    background-color: var(--mBG);
+}
+
+.modalSection {
+    width: 80vw;
+    height: fit-content;
+    min-height: 20vh;
+    background-color: var(--Ct);
+    cursor: default;
+}
+
+.modalH1 {
+    font-family: 'Poppins';
+    margin: 0;
+    border-bottom: var(--Shader) 3px solid;
+}
+
+.modalP {
+    /* text-align: center; */
+    font-size: 2rem;
+    font-family: 'Poppins';
+    margin: 0 10px;
+}
