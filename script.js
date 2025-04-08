@@ -65,7 +65,7 @@ Message.addEventListener("copy", () => {
     header.classList.add("modalH1");
 
     const content = document.createElement("p");
-    content.innerText = "This website is my final, everlasting gift to this organization I have failed, to it's future, to the plan painted on the wall. But in His eyes, I can tell He knows that I am only really doing it for Him. The greatest, most universal acts are always born from the personal."
+    content.innerText = "This website is my final, everlasting gift to this organization I have failed, to it's future, and to the plan painted on the wall. But in His eyes, I can tell He knows that I am only really doing it for Him. The greatest, most universal acts are always born from the personal."
     content.classList.add("modalP");
 
 
