@@ -13,7 +13,7 @@ heroImg.forEach(image => {
     
         const modalImg = document.createElement("img");
         modalImg.src = image.getAttribute("src");
-        modalImg.classList.add("heroImg");
+        modalImg.classList.add("modalImg");
     
         body.append(popUp);
         popUp.showModal();
