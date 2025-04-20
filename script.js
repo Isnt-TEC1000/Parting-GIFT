@@ -33,7 +33,7 @@ heroImg.forEach(image => {
 /* Ignore this for now */
 const stateCheck = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log("success");
+        // console.log("success");
         if (entry.isIntersecting) {
             entry.target.classList.add("slide-in");
         } else {
@@ -45,12 +45,8 @@ const stateCheck = new IntersectionObserver((entries) => {
 const animArtic = document.querySelectorAll(".prayImg");
 animArtic.forEach((el) => stateCheck.observe(el));
 
-window.addEventListener('load', () => {
-    let scrollElement = document.querySelectorAll('.carousel');
-    scrollElement.scrollLeft =  (scrollElement.scrollWidth - scrollElement.clientWidth ) / 2;
-    console.log("huh")
-  });
 
+// and this...
 const Message = document.querySelector(".hero h1");
 
 Message.addEventListener("copy", () => {
@@ -58,7 +54,7 @@ Message.addEventListener("copy", () => {
     MessageH.classList.add("modalH");
 
     const container = document.createElement("section");
-    container.classList.add("modalSection")
+    container.classList.add("modalSection");
 
     const header = document.createElement("h1");
     header.innerText = "My Parting Gift";
@@ -82,7 +78,110 @@ Message.addEventListener("copy", () => {
             MessageH.close();
             MessageH.remove();
         }
-    }
+    };
 });
 
+// this too...
+const limEve = document.querySelector(".navMod");
+const imgSrc = [1,2,3,4,5,6,7,8];
+const titleSrc = ["Kamis Putih", "Jumat Agung", "Malam Paskah"];
+
+limEve.addEventListener("click", () => {
+    const container = document.createElement("dialog");
+    container.classList.add("modalH");
+
+    const bento = document.createElement("section");
+    bento.classList.add("modalSectionLM");
+
+    const selectScr = document.createElement("section");
+    selectScr.classList.add("navLM");
+
+    const navSelect = document.createElement("nav");
+    navSelect.classList.add("navArea");
+
+    titleSrc.forEach((element) => {
+        const selectTitle = document.createElement("h3");
+        selectTitle.innerText = element;
+        selectTitle.setAttribute("class", element);
+        selectTitle.classList.add("hdLM");
+        if (element == "Kamis Putih") {
+            selectTitle.classList.add("hdSelected");
+        };
+        navSelect.append(selectTitle);
+        selectScr.append(navSelect);
+    });
+
+    bento.append(selectScr);
+
+    imgSrc.forEach((element) => {
+        console.log("casserole");
+        const bentoImg = document.createElement("img");
+        bentoImg.setAttribute("class", element);
+        bentoImg.setAttribute("src", "./src/mt/" + element + ".svg");
+        bentoImg.classList.add("imgMT");
+        bento.append(bentoImg);
+    });
+
+    container.append(bento);
+    body.append(container);
+    container.showModal();
+
+    const LMImg = document.querySelectorAll("img");
+    const changeScreen = container.querySelectorAll("h3");
+    console.log(changeScreen);
+    changeScreen.forEach((element) => {
+
+        element.onclick = () => {        
+            changeScreen.forEach((element) => {
+                element.classList.remove("hdSelected");
+            });
+            element.classList.toggle("hdSelected");
+            console.log("something changed")
+        }
+    });
+
+    LMImg.forEach(image => {
+        image.onclick = () => {
+            const popUp = document.createElement("dialog");
+            popUp.classList.add("modal");
+        
+            const modalImg = document.createElement("img");
+            modalImg.src = image.getAttribute("src");
+            modalImg.classList.add("modalImg");
+        
+            body.append(popUp);
+            popUp.showModal();
+            
+            popUp.append(modalImg);
+        
+            window.onclick = function(event) {
+                if (event.target == popUp) {
+                    popUp.close();
+                    popUp.remove();
+                    window.onclick = function(event) {
+                        if (event.target == container) {
+                            container.close();
+                            container.remove();
+                    }
+            }};
+            }
+        }
+    });
+
+    window.onclick = function(event) {
+        if (event.target == container) {
+            container.close();
+            container.remove();
+        }
+    };
+})
+
+// limEve.addEventListener("click", () => {    window.onclick = function(event) {
+//     if (event.target == container) {
+//         console.log("eijr")
+//         container.close();
+//         container.remove();
+//     }
+// };
+// })
 
