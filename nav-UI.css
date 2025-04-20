@@ -295,7 +295,7 @@ footer a:hover {
 }
 
 .navArea {
-    width: 90%;
+    width: 85%;
     border-radius: 4px;
     height: max-content;
     background-color: var(--Nav);
@@ -304,7 +304,6 @@ footer a:hover {
 }
 
 .hdLM {
-    /* background-color: var(--CG); */
     margin: 10px;
     padding: 5px;
     border: solid 2px var(--br);
@@ -322,7 +321,6 @@ footer a:hover {
 .imgMT {    
     cursor: pointer;
     width: 50%;
-    /* padding: 5px; */
     min-height: 400px;
     max-height: 400px;
     object-fit: cover;
@@ -380,6 +378,11 @@ footer a:hover {
     .imgMT {
         min-height: 300px;
         max-height: 300px;
+    }
+
+    .hdLM {
+        font-size: 1rem;
+        margin: 5px;
     }
 }
 
