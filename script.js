@@ -83,7 +83,8 @@ Message.addEventListener("copy", () => {
 
 // this too...
 const limEve = document.querySelector(".navMod");
-const imgSrc = [1,2,3,4,5,6,7,8];
+const imgSrc1 = [1,2,3,4,5,6,7,8];
+const imgSrc2 = [1,2,3,4,5,6,7,8,9,10];
 const titleSrc = ["Kamis Putih", "Jumat Agung", "Malam Paskah"];
 
 limEve.addEventListener("click", () => {
@@ -113,7 +114,7 @@ limEve.addEventListener("click", () => {
 
     bento.append(selectScr);
 
-    imgSrc.forEach((element) => {
+    imgSrc1.forEach((element) => {
         console.log("casserole");
         const bentoImg = document.createElement("img");
         bentoImg.setAttribute("class", element);
@@ -126,19 +127,184 @@ limEve.addEventListener("click", () => {
     body.append(container);
     container.showModal();
 
-    const LMImg = document.querySelectorAll("img");
+    const selImg = document.querySelector("dialog");
+    const LMImg = selImg.querySelectorAll("img");
     const changeScreen = container.querySelectorAll("h3");
     console.log(changeScreen);
+
     changeScreen.forEach((element) => {
+
+        
 
         element.onclick = () => {        
             changeScreen.forEach((element) => {
                 element.classList.remove("hdSelected");
             });
+
             element.classList.toggle("hdSelected");
-            console.log("something changed")
+
+            if (element.innerText === "Jumat Agung") {        
+                const seleImg = document.querySelector("dialog");
+                const updImg = seleImg.querySelectorAll("img");
+                updImg.forEach((image) => {
+                    image.remove();
+                        
+                });
+                imgSrc2.forEach((element) => {
+
+                    const bentoImg = document.createElement("img");
+                    bentoImg.setAttribute("class", element);
+                    bentoImg.setAttribute("src", "./src/gf/" + element + ".svg");
+                    bentoImg.classList.add("imgMT");
+                    bento.append(bentoImg);
+                });
+
+                const renderedImg = seleImg.querySelectorAll("img");
+                
+                renderedImg.forEach(image => {
+                    image.onclick = () => {
+                        const popUp = document.createElement("dialog");
+                        popUp.classList.add("modal");
+                    
+                        const modalImg = document.createElement("img");
+                        modalImg.src = image.getAttribute("src");
+                        modalImg.classList.add("modalImg");
+                    
+                        body.append(popUp);
+                        popUp.showModal();
+                        
+                        popUp.append(modalImg);
+                    
+                        window.onclick = function(event) {
+                            if (event.target == popUp) {
+                                popUp.close();
+                                popUp.remove();
+                            } else if (event.target == container) {
+                                container.close();
+                                container.remove();
+                            }
+                        };
+                    }
+                });
+            
+
+                window.onclick = function(event) {
+                    if (event.target == container) {
+                        container.close();
+                        container.remove();
+                    }
+                };
+            } else if (element.innerText == "Malam Paskah") {
+                const seleImg = document.querySelector("dialog");
+                const updImg = seleImg.querySelectorAll("img");  
+                updImg.forEach((image) => {
+                    image.remove();
+                        
+                });
+                imgSrc2.forEach((element) => {
+
+                    const bentoImg = document.createElement("img");
+                    bentoImg.setAttribute("class", element);
+                    bentoImg.setAttribute("src", "./src/ev/" + element + ".svg");
+                    bentoImg.classList.add("imgMT");
+                    bento.append(bentoImg);
+                });
+
+                const renderedImg = seleImg.querySelectorAll("img");
+                
+                renderedImg.forEach(image => {
+                    image.onclick = () => {
+                        const popUp = document.createElement("dialog");
+                        popUp.classList.add("modal");
+                    
+                        const modalImg = document.createElement("img");
+                        modalImg.src = image.getAttribute("src");
+                        modalImg.classList.add("modalImg");
+                    
+                        body.append(popUp);
+                        popUp.showModal();
+                        
+                        popUp.append(modalImg);
+                    
+                        window.onclick = function(event) {
+                            if (event.target == popUp) {
+                                popUp.close();
+                                popUp.remove();
+                            } else if (event.target == container) {
+                                container.close();
+                                container.remove();
+                            }
+                        };
+                    }
+                });
+            
+
+                window.onclick = function(event) {
+                    if (event.target == container) {
+                        container.close();
+                        container.remove();
+                    }
+                };
+            } else if (element.innerText == "Kamis Putih") {
+                const seleImg = document.querySelector("dialog");
+                const updImg = seleImg.querySelectorAll("img");
+                imgSrc2.forEach((element) => {
+                    console.log(updImg[0]);
+                    updImg[0].remove();
+                    updImg[9].remove();
+                });
+
+                imgSrc1.forEach((element) => {
+
+                    updImg[element].setAttribute("src", "./src/mt/" + element + ".svg");
+
+                });
+
+                const renderedImg = seleImg.querySelectorAll("img");
+                
+                renderedImg.forEach(image => {
+                    image.onclick = () => {
+                        const popUp = document.createElement("dialog");
+                        popUp.classList.add("modal");
+                    
+                        const modalImg = document.createElement("img");
+                        modalImg.src = image.getAttribute("src");
+                        modalImg.classList.add("modalImg");
+                    
+                        body.append(popUp);
+                        popUp.showModal();
+                        
+                        popUp.append(modalImg);
+                    
+                        window.onclick = function(event) {
+                            if (event.target == popUp) {
+                                popUp.close();
+                                popUp.remove();
+                            } else if (event.target == container) {
+                                container.close();
+                                container.remove();
+                            }
+                        };
+                    }
+                });
+
+                window.onclick = function(event) {
+                    if (event.target == container) {
+                        container.close();
+                        container.remove();
+                    }
+                };
+
+
+            };
+            console.log("something changed");
+
         }
+        
+
     });
+
+    
 
     LMImg.forEach(image => {
         image.onclick = () => {
@@ -158,13 +324,11 @@ limEve.addEventListener("click", () => {
                 if (event.target == popUp) {
                     popUp.close();
                     popUp.remove();
-                    window.onclick = function(event) {
-                        if (event.target == container) {
-                            container.close();
-                            container.remove();
-                    }
-            }};
-            }
+                } else if (event.target == container) {
+                    container.close();
+                    container.remove();
+                }
+            };
         }
     });
 
@@ -175,13 +339,3 @@ limEve.addEventListener("click", () => {
         }
     };
 })
-
-// limEve.addEventListener("click", () => {    window.onclick = function(event) {
-//     if (event.target == container) {
-//         console.log("eijr")
-//         container.close();
-//         container.remove();
-//     }
-// };
-// })
-

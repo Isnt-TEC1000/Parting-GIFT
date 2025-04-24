@@ -64,7 +64,7 @@ nav h1 {
     width: 30%;
     max-width: 80px;
     margin: 15px;
-    height: 80px;
+    height: 70px;
     background-image: url(./src/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -72,7 +72,7 @@ nav h1 {
 }
 
 .dropdown {
-    width: 30%;
+    width: fit-content;
     max-width: 80px;
     height: 60px;
     display: flex;
@@ -84,7 +84,8 @@ nav h1 {
 }
 
 section div {
-    width: 100%;
+    width: 10vw;
+    max-width: 70px;
     height: 15%;
     border-radius: 8px;
     background-color: var(--Prim);
@@ -134,12 +135,14 @@ section div {
     display: flex;
 }
 
+.infos {
+    display: flex;
+    align-items: center
+}
+
 .chevArea {
-    top: 3vh;
-    left: 75%;
-    position: absolute;
-    /* width: 50px; */
-    height: 50px;
+    margin: 0 20px;
+    height: fit-content;
     cursor: pointer;
 }
 
@@ -154,8 +157,8 @@ section div {
     background-color: var(--HeroTxt);
     width: max-content;
     position: absolute;
-    right: 20%;
-    top: 6vh;
+    right: 8%;
+    top: 8vh;
     padding: 4px;
     border: solid 3px var(--br);
     border-radius: 8px;
@@ -330,18 +333,10 @@ footer a:hover {
 
 }
 
-  
-@media screen and (max-width: 599px) {
-    .card-tall,
-    .card-wide {
-      grid-row: span 1 / auto;
-      grid-column: span 1 / auto;
-    }
-  }
 @media (max-width: 800px) {
 
     .chevArea {
-        left: 80%;
+        margin: 5px;
     }
 
     .limEv {
@@ -364,15 +359,7 @@ footer a:hover {
     }
 
     .dropdown {
-        width: 20%;
-        max-width: 60px;
-        height: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
         margin: 15px;
-        cursor: pointer;
     }
 
     .imgMT {
@@ -392,9 +379,9 @@ footer a:hover {
         margin: 15px;
     }
 
-    .chevArea {
+    /* .chevArea {
         left: 70%; 
-    }
+    } */
 }
 
 @media (max-width: 520px) {
